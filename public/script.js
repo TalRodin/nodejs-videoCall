@@ -9,7 +9,7 @@ myVideo.muted = true
 const peer = new Peer(undefined, {
     path: '/peerjs',
     host: '/',
-    port:'443'
+    port:'3030'
 })
 
 let myVideoStream
@@ -32,7 +32,7 @@ navigator.mediaDevices.getUserMedia({
     socket.on('user-connected', (userId)=>{
         connectToNewUser(userId, stream)
     })
-    let text = $('input')
+    let text = $('textarea')
 
     $('html').keydown((e)=>{
         if(e.which == 13 && text.val().length!==0){
