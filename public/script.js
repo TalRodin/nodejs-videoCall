@@ -48,13 +48,9 @@ navigator.mediaDevices.getUserMedia({
     })
 })
 
-
 peer.on('open', id =>{
     socket.emit('join-room', ROOM_ID, id)
 })
-
-
-
 
 const connectToNewUser = (userId, stream) =>{
     const call = peer.call(userId, stream)
@@ -64,8 +60,6 @@ const connectToNewUser = (userId, stream) =>{
     })
 }
 
-
-
 const  addVideoStream = (video, stream)=>{
     video.srcObject=stream
     video.addEventListener('loadedmetadata',()=>{
@@ -73,7 +67,6 @@ const  addVideoStream = (video, stream)=>{
     })
     videoGrid.append(video)
 }
-
 
 const scrollToBottom = () =>{
     let d=$('.main__chat_window')
